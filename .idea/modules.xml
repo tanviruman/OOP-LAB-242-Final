@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ArrayList/ArrayList.iml" filepath="$PROJECT_DIR$/ArrayList/ArrayList.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOP-LAB-242-Final.iml" filepath="$PROJECT_DIR$/OOP-LAB-242-Final.iml" />
     </modules>
   </component>
