@@ -3,11 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ArrayList/ArrayList.iml" filepath="$PROJECT_DIR$/ArrayList/ArrayList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ClassCode/ClassArrayList/ClassArrayList.iml" filepath="$PROJECT_DIR$/ClassCode/ClassArrayList/ClassArrayList.iml" />
       <module fileurl="file://$PROJECT_DIR$/ClassCode/ClassCode.iml" filepath="$PROJECT_DIR$/ClassCode/ClassCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ClassCode/ClassFile/ClassFile.iml" filepath="$PROJECT_DIR$/ClassCode/ClassFile/ClassFile.iml" />
       <module fileurl="file://$PROJECT_DIR$/ClassCode/ClassString/ClassString.iml" filepath="$PROJECT_DIR$/ClassCode/ClassString/ClassString.iml" />
       <module fileurl="file://$PROJECT_DIR$/File/File.iml" filepath="$PROJECT_DIR$/File/File.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Filesolve/Filesolve.iml" filepath="$PROJECT_DIR$/Filesolve/Filesolve.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOP-LAB-242-Final.iml" filepath="$PROJECT_DIR$/OOP-LAB-242-Final.iml" />
       <module fileurl="file://$PROJECT_DIR$/String/String.iml" filepath="$PROJECT_DIR$/String/String.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p-1/p-1.iml" filepath="$PROJECT_DIR$/p-1/p-1.iml" />
     </modules>
   </component>
 </project>
