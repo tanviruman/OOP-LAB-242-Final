@@ -1,0 +1,123 @@
+package Practice_Bin;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Scanner;
+
+
+
+public class Student{
+    String name;
+    int mark1,mark2,mark3;
+
+    Student(String name, int mark1,int mark2, int mark3){
+        this.name=name;
+        this.mark1=mark1;
+        this.mark2=mark2;
+        this.mark3=mark3;
+    }
+
+    double avg(){
+        double sum=mark1+mark2+mark3;
+        double avg=sum/3;
+        //System.out.println(avg);
+        return avg;
+    }
+}
+
+
+class Wrongg extends Exception {
+    Wrongg(){
+        super("Mark can't be negative");
+    }
+}
+
+
+
+class Question02 {
+
+    static void check(int mark) throws Wrongg {
+        if(mark<0)
+            throw new Wrongg();
+    }
+
+    public static void main(String[] args) {
+
+        ArrayList<Student> arr = new ArrayList<>();
+
+        try {
+            File file = new File("Files/Input");
+            Scanner sc = new Scanner(file);
+
+            for (int i = 1; sc.hasNextLine(); i++) {
+                String a = sc.nextLine();
+                String b[]=a.split(" ");
+
+                try {
+                    check(Integer.parseInt(b[1]));
+                    check(Integer.parseInt(b[2]));
+                    check(Integer.parseInt(b[3]));
+                } catch (Wrongg e) {
+                    e.getMessage();
+                }
+
+                if(b.length==4)
+                    arr.add(new Student(b[0], Integer.parseInt(b[1])  , Integer.parseInt(b[2]), Integer.parseInt(b[3])));
+
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        Collections.sort(arr, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                if(o1.avg()>o2.avg())
+                    return 1;
+                if(o1.avg()== o2.avg())
+                    return 0;
+                return -1;
+            }
+        });
+
+        try{
+            File file_out=new File("Files/Output");
+            PrintWriter out=new PrintWriter(file_out);
+
+            for(int i=0; i< arr.size(); i++){
+                out.println(arr.get(i).name+"  "+arr.get(i).avg());
+            }
+            out.close();
+
+        }catch (Exception e0){
+            e0.printStackTrace();
+        }
+
+        Scanner s =new Scanner(System.in);
+        String searchItem=s.nextLine();
+        boolean flag=true;
+
+        for(int i=0; i<arr.size(); i++){
+            if(arr.get(i).name.equalsIgnoreCase(searchItem)){
+                System.out.println(arr.get(i).name+" "+arr.get(i).mark1+" "+arr.get(i).mark2+" "+arr.get(i).mark3+" "+arr.get(i).avg());
+                flag=false;
+                break;
+            }
+        }
+
+        if(flag==true)
+            System.out.println("User not found");
+
+        System.out.println();
+
+//        for(int i=0; i< arr.size(); i++){
+//            System.out.println(arr.get(i).name+" "+arr.get(i).avg() );
+//        }
+
+        }
+}
